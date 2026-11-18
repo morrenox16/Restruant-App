@@ -11,11 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     // 1. Declare UI Elements
-    private CheckBox chkTaco;
-    private CheckBox chkBurrito; // Added
-    private CheckBox chkDrink;   // Added
-    private Button btnPlaceOrder;
-    private TextView txtTotal;
+    private Button btnViewMenu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,39 +20,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        btnViewMenu = (Button) findViewById(R.id.btnViewMenu);
+
+
+
 
         // 3. Set up the Button Click Listener
-        btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
+        btnViewMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 double totalPrice = 0.0;
                 StringBuilder orderSummary = new StringBuilder("Ordered: ");
 
-                // Check Taco
-                if (chkTaco.isChecked()) {
-                    totalPrice += 10.99;
-                    orderSummary.append("Taco ");
-                }
-
-                // Check Burrito
-                if (chkBurrito.isChecked()) {
-                    totalPrice += 12.49;
-                    orderSummary.append("Burrito ");
-                }
-
-                // Check Drink
-                if (chkDrink.isChecked()) {
-                    totalPrice += 2.50;
-                    orderSummary.append("Drink ");
-                }
 
                 // Handle empty order edge case
                 if (totalPrice == 0.0) {
-                    orderSummary.append("Nothing selected");
+                    orderSummary.append("Theres nothing to order");
                 }
 
-                // 4. Update the total text view and show a popup toast message
-                txtTotal.setText(String.format("Total: $%.2f", totalPrice));
                 Toast.makeText(MainActivity.this, orderSummary.toString(), Toast.LENGTH_SHORT).show();
             }
         });
