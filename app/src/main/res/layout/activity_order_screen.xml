@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header & Branding -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Picante Habanero is a restaurant logo, Picante is red, meanwhile Habanero is yellow!"
+            android:src="@drawable/ph_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Picante Habanero"
+            android:textColor="#D32F2F"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:text="Build Your Taco Order"
+            android:textColor="#555555"
+            android:textSize="16sp" />
+
+        <!-- Section 1: Taco Protein Choice -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="1. Choose Your Protein ($3.50 each)"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgProtein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <RadioButton
+                android:id="@+id/rbCarneAsada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Carne Asada (Grilled Steak)"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbAlPastor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Al Pastor (Marinated Pork)"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbPollo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pollo Asado (Grilled Chicken)"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbVeggie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Veggie Fajita"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <!-- Section 2: Toppings & Salsa -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="2. Free Toppings &amp; Salsa"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/cbCilantroOnion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Cilantro &amp; Diced Onions"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/cbCheese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cotija Cheese"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/cbHabaneroSalsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Extra Picante Habanero Salsa (Spicy!)"
+            android:textSize="16sp" />
+
+        <!-- Section 3: Quantity Selector -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="3. Quantity"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDecrease"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="-"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#111111"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnIncrease"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="+"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Section 4: Special Instructions -->
+        <EditText
+            android:id="@+id/etNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:hint="Special instructions (e.g., extra lime, corn tortilla)..."
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <!-- Total Price & Checkout Button -->
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="end"
+            android:text="Total: $3.50"
+            android:textColor="#111111"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnPlaceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#D32F2F"
+            android:text="Add to Order"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>
